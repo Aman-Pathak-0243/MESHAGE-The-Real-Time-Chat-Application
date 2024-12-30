@@ -14,11 +14,14 @@ export const SocketContextProvider=({children})=>{
     const {authUser} = useAuth();
     useEffect(()=>{
         if(authUser){
-            const socket = io("https://slrtech-chatapp.onrender.com/",{
-                query:{
-                    userId:authUser?._id,
-                }
-            })
+            const socket = io(
+              "https://meshage-the-real-time-chat-application.onrender.com/",
+              {
+                query: {
+                  userId: authUser?._id,
+                },
+              }
+            );
             socket.on("getOnlineUsers",(users)=>{
                 setOnlineUser(users)
             });

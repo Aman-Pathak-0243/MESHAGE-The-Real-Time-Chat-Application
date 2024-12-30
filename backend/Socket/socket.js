@@ -5,11 +5,11 @@ import express from 'express';
 const app = express();
 
 const server = http.createServer(app);
-const io = new Server(server,{
-    cors:{
-        origin:['https://slrtech-chatapp.onrender.com'],
-        methods:["GET","POST"]
-    }
+const io = new Server(server, {
+  cors: {
+    origin: ["https://meshage-the-real-time-chat-application.onrender.com"],
+    methods: ["GET", "POST"],
+  },
 });
 
 export const getReciverSocketId = (receverId)=>{
