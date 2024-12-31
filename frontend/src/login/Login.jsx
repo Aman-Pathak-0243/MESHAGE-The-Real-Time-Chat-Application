@@ -17,7 +17,7 @@ const Login = () => {
             ...userInput, [e.target.id]: e.target.value
         })
     }
-    console.log(userInput);
+    // console.log(userInput);
 
     const handelSubmit = async (e) => {
         e.preventDefault();

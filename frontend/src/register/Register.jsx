@@ -15,7 +15,7 @@ const Register = () => {
             ...inputData , [e.target.id]:e.target.value
         })
     }
-console.log(inputData);
+// console.log(inputData);
     const selectGender=(selectGender)=>{
         setInputData((prev)=>({
             ...prev , gender:selectGender === inputData.gender ? '' : selectGender
@@ -35,7 +35,7 @@ console.log(inputData);
             if(data.success === false){
                 setLoading(false)
                 toast.error(data.message)
-                console.log(data.message);
+                // console.log(data.message);
             }
             toast.success(data?.message)
             localStorage.setItem('chatapp',JSON.stringify(data))

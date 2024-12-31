@@ -40,7 +40,7 @@ const MessageContainer = ({ onBackUser }) => {
                 const data = await get.data;
                 if (data.success === false) {
                     setLoading(false);
-                    console.log(data.message);
+                    // console.log(data.message);
                 }
                 setLoading(false);
                 setMessage(data);
@@ -53,7 +53,7 @@ const MessageContainer = ({ onBackUser }) => {
 
         if (selectedConversation?._id) getMessages();
     }, [selectedConversation?._id, setMessage])
-    console.log(messages);
+    // console.log(messages);
 
     const handelMessages=(e)=>{
         setSnedData(e.target.value)
@@ -67,7 +67,7 @@ const MessageContainer = ({ onBackUser }) => {
             const data = await res.data;
             if (data.success === false) {
                 setSending(false);
-                console.log(data.message);
+                // console.log(data.message);
             }
             setSending(false);
             setSnedData('')

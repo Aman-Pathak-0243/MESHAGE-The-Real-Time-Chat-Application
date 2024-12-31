@@ -42,7 +42,7 @@ const Sidebar = ({ onSelectUser }) => {
                 const data = chatters.data;
                 if (data.success === false) {
                     setLoading(false)
-                    console.log(data.message);
+                    // console.log(data.message);
                 }
                 setLoading(false)
                 setChatUser(data)
@@ -64,7 +64,7 @@ const Sidebar = ({ onSelectUser }) => {
             const data = search.data;
             if (data.success === false) {
                 setLoading(false)
-                console.log(data.message);
+                // console.log(data.message);
             }
             setLoading(false)
             if (data.length === 0) {
@@ -95,15 +95,17 @@ const Sidebar = ({ onSelectUser }) => {
     //logout
     const handelLogOut = async () => {
 
-        const confirmlogout = window.prompt("type 'UserName' To LOGOUT");
-        if (confirmlogout === authUser.username) {
+        const confirmlogout = window.confirm(
+          "Are you sure you want to log out?"
+        );
+        if (confirmlogout) {
             setLoading(true)
             try {
                 const logout = await axios.post('/api/auth/logout')
                 const data = logout.data;
                 if (data?.success === false) {
                     setLoading(false)
-                    console.log(data?.message);
+                    // console.log(data?.message);
                 }
                 toast.info(data?.message)
                 localStorage.removeItem('chatapp')
